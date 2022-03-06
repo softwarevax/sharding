@@ -12,6 +12,12 @@ import java.util.Set;
 @Slf4j
 public class SnoWalkerComplexShardingTB implements ComplexKeysShardingAlgorithm {
 
+    /**
+     *
+     * @param availableTargetNames 配置的数据源(ds0,ds1)
+     * @param shardingValue 分片的字段，及字段对应的值
+     * @return 数据要插入的数据库对应数据源的集合ds0,ds1
+     */
     @Override
     public Collection<String> doSharding(Collection availableTargetNames, ComplexKeysShardingValue shardingValue) {
         Map<String, Collection> columnNameAndShardingValuesMap = shardingValue.getColumnNameAndShardingValuesMap();
